@@ -9,9 +9,5 @@
  */
 int main(void)
 {
-    int len = 5;
-
-    _printf("Let's try to printf a simple sentence.\n");
-    printf("%d", len);
-    return (0);
+	printf("%z", "Felizardo");
 }

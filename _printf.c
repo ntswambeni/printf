@@ -13,11 +13,7 @@ int _printf(const char *format, ...)
 	int counter = 0;
 
 	va_start(list, format);
-	if (!format)
-	{
-		return (0);
-	}
-	while (format)
+	while (*format != '\0')
 	{
 		if (*format != '%')
 		{
