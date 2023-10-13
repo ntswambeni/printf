@@ -10,7 +10,7 @@
 int _puts(char *s)
 {
 
-	int i, len;
+	int i;
 	
 	if (s == NULL)
 		return (0);
