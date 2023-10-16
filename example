@@ -1,0 +1,11 @@
+#include "main.h"
+#include <stdio.h>
+
+int main(void)
+{
+	char a = 'A';
+	int i;
+	i = printf("%c\n testing%b\n", a, 87);
+	printf("%d\n", i);
+	return 0;
+}
