@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdlib.h>
 
 /**
  * _puts - prints a string
@@ -11,7 +11,7 @@ int _puts(char *s)
 {
 
 	int i;
-	
+
 	if (s == NULL)
 		return (0);
 
