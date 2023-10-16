@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
-int _putchar(char c, char *buffer, int *buffer_index);
+int _putchar(char c);
 int case_c(char c, char *buffer, int *buffer_index);
 int case_s(char *s, char *buffer, int *buffer_index);
 int case_b(unsigned int n, char *buffer, int *buffer_index);
