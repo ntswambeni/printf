@@ -41,6 +41,10 @@ int _printf(const char *format, ...)
 				counter += _printnumbers(va_arg(list, int));
 			else if (*format == 'b')
 				counter += case_b(va_arg(list, unsigned int), buffer, &buffer_index);
+			else if (*format == '\n')
+				counter += case_c((char)va_arg(list, int), buffer, &buffer_index);
+			else
+				return (-1);
 		}
 		format++;
 	}
