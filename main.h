@@ -11,5 +11,8 @@ int case_c(char c, char *buffer, int *buffer_index);
 int case_s(char *s, char *buffer, int *buffer_index);
 int case_b(unsigned int n, char *buffer, int *buffer_index);
 void flush_reset_buffer(char *buffer, int *buffer_index);
+int _printnumbers(int d);
+void _printdigit(int num);
+int _countdigits(int num);
 
 #endif
