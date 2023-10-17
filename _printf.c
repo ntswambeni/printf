@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	char buffer[BUFFER_SIZE];
-	int counter = 0, buffer_index = 0, i;
+	int counter = 0, buffer_index = 0;
 
 	va_start(list, format);
 	if (format == NULL)
@@ -47,44 +47,11 @@ int _printf(const char *format, ...)
 				buffer[buffer_index++] = '\n';
 				counter += 2;
 			}
-			else if (*format == ' ')
-			{
-				for (i = 1; format[i] != '\0'; i++)
-				{
-					if (format[i] != ' ')
-					{
-						buffer[buffer_index++] = '%';
-						buffer[buffer_index++] = ' ';
-						format += i - 1;
-						counter += 2;
-						break;
-					}
-				}
-			}
-			else
-			{
-				for (i = 1; format[i] != '\0'; i++)
-				{
-					if (format[i] != ' ')
-					{
-						buffer[buffer_index++] = '%';
-						format += i - 1;
-						counter++;
-						break;
-					}
-				}
-				if (format[i] == '\0')
-				{
-					flush_reset_buffer(buffer, &buffer_index);
-					return (-1);
-				}
-			}
 		}
 		format++;
 	}
 	if (buffer_index > 0)
 	{
-		buffer[buffer_index++] = '\0';
 		flush_reset_buffer(buffer, &buffer_index);
 	}
 	va_end(list);
