@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == ' ')
 			{
-				for (i = 1; format[i] != '\0'; i++ )
+				for (i = 1; format[i] != '\0'; i++)
 				{
 					if (format[i] != ' ')
 					{
@@ -61,16 +61,16 @@ int _printf(const char *format, ...)
 					}
 				}
 			}
-			else 
+			else
 			{
 				for (i = 1; format[i] != '\0'; i++)
 				{
 					if (format[i] != ' ')
 					{
 						buffer[buffer_index++] = '%';
-                                                format += i - 1;
-                                                counter ++;
-                                                break;
+						format += i - 1;
+						counter++;
+						break;
 					}
 				}
 				if (format[i] == '\0')
