@@ -2,17 +2,18 @@
 #include <stddef.h>
 
 /**
- * _puts - prints a string
+ * case_s - prints a string
  * @s: the given string
  * @buffer: the buffer string pointer
  * @buffer_index: the buffer_index pointer
+ * Return: amount of characters sent to the buffer
  */
 
 int case_s(char *s, char *buffer, int *buffer_index)
 {
 
 	int i;
-	
+
 	if (s == NULL)
 		return (0);
 

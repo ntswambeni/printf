@@ -5,6 +5,7 @@
  * @n: the unsigned int value
  * @buffer: the buffer pointer
  * @buffer_index: the buffer index pointer
+ * Return: amount of characters sent to the buffer
  */
 
 int case_b(unsigned int n, char *buffer, int *buffer_index)

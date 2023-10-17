@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * _printf - prints a formated string
@@ -13,6 +14,8 @@ int _printf(const char *format, ...)
 	int counter = 0, buffer_index = 0;
 
 	va_start(list, format);
+	if (format == NULL)
+		return (-1);
 	while (*format != '\0')
 	{
 		if (*format != '%')

@@ -6,6 +6,7 @@
  * @c: character to print
  * @buffer: the string buffer pointer
  * @buffer_index: the buffer_index pointer
+ * Return: amount of characters sent to the buffer
  */
 
 int case_c(char c, char *buffer, int *buffer_index)
