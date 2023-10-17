@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	char buffer[BUFFER_SIZE];
-	int counter = 0, buffer_index = 0;
+	int counter = 0, buffer_index = 0, i;
 
 	va_start(list, format);
 	if (format == NULL)
