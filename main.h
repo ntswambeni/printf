@@ -3,8 +3,6 @@
 
 #define BUFFER_SIZE 1024
 
-#include <unistd.h>
-
 int _printf(const char *format, ...);
 int _putchar(char c);
 int case_c(char c, char *buffer, int *buffer_index);

@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * flush_reset_buffer - fxn flushes and reset buffer
