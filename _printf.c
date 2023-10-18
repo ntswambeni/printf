@@ -41,6 +41,9 @@ int _printf(const char *format, ...)
 				counter += _printnumbers(va_arg(list, int), buffer, &buffer_index);
 			else if (*format == 'b')
 				counter += case_b(va_arg(list, unsigned int), buffer, &buffer_index);
+			else if (*format == 'R')
+				counter += case_s(va_arg(list, char *), buffer, &buffer_index);
+
 			else if (*format == '\n')
 			{
 				buffer[buffer_index++] = '%';
