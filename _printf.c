@@ -60,9 +60,19 @@ int _printf(const char *format, ...)
 						break;
 					}
 				}
+				if (format[i] == '\0')
+				{
+					flush_reset_buffer(buffer, &buffer_index);
+					return (-1);
+				}
 			}
 			else
 			{
+				if (*format == '\0')
+				{
+					flush_reset_buffer(buffer, &buffer_index);
+					return (-1);
+				}
 				for (i = 1; format[i] != '\0'; i++)
 				{
 					if (format[i] != ' ')
