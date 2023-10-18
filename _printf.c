@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 				counter++;
 			}
 			else if (*format == 'd' || *format == 'i')
-				counter += _printnumbers(va_arg(list, int));
+				counter += _printnumbers(va_arg(list, int), buffer, &buffer_index);
 			else if (*format == 'b')
 				counter += case_b(va_arg(list, unsigned int), buffer, &buffer_index);
 			else if (*format == '\n')
