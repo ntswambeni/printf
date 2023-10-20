@@ -15,5 +15,7 @@ int _countdigits(int num);
 int _printnumbers(int d, char *buffer, int *buffer_index);
 void _printdigit(int num, char *buffer, int *buffer_index);
 int case_R(char *s, char *buffer, int *buffer_index);
+int case_p(void *ptr, char *buffer, int *buffer_index);
+int case_r(char *s, char *buffer, int *buffer_index);
 
 #endif

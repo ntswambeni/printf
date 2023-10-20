@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 {
 	va_list list;
 	char buffer[BUFFER_SIZE];
-	int counter = 0, buffer_index = 0, i;
+	int counter = 0, buffer_index = 0;
 
 	va_start(list, format);
 	if (format == NULL)
@@ -42,8 +42,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'b')
 				counter += case_b(va_arg(list, unsigned int), buffer, &buffer_index);
 			else if (*format == 'R')
-				counter += case_s(va_arg(list, char *), buffer, &buffer_index);
-
+				counter += case_R(va_arg(list, char *), buffer, &buffer_index);
 			else if (*format == '\n')
 			{
 				buffer[buffer_index++] = '%';

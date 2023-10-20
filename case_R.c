@@ -13,11 +13,16 @@ int case_R(char *s, char *buffer, int *buffer_index)
 	int i, j, len;
 	char str1[52] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char str2[52] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int check;
+
+	if (s == NULL)
+		return (-1);
 
 	len = 0;
-	for (i  = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j  = 0; j < 52; j++)
+		check =0;
+		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == str1[j])
 			{
@@ -25,8 +30,19 @@ int case_R(char *s, char *buffer, int *buffer_index)
 					flush_reset_buffer(buffer, buffer_index);
 				buffer[(*buffer_index)++] = str2[j];
 				len++;
+				check = 1; /* to indicate xter found*/
+				continue;
 			}
 		}
+
+		if (!check)/*prints non alphabet xters*/
+		{
+			if (*buffer_index >= BUFFER_SIZE)
+				flush_reset_buffer(buffer, buffer_index);
+			buffer[(*buffer_index)++] = s[i];
+			len++;
+		}
+
 	}
 	return (len);
 }
