@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 				counter += case_R(va_arg(list, char *), buffer, &buffer_index);
 			else
 			{
-				if (*buffer_index >= BUFFER_SIZE - 2)
+				if (buffer_index >= BUFFER_SIZE - 2)
 					flush_reset_buffer(buffer, &buffer_index);
 				buffer[buffer_index++] = '%';
 				buffer[buffer_index++] = *format;

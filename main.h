@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stddef.h>
+
 #define BUFFER_SIZE 1024
 
 int _printf(const char *format, ...);
@@ -15,6 +17,6 @@ void _printdigit(int num, char *buffer, int *buffer_index);
 int case_R(char *s, char *buffer, int *buffer_index);
 int case_p(void *ptr, char *buffer, int *buffer_index);
 int case_r(char *s, char *buffer, int *buffer_index);
-int case_percentage(*buffer, *buffer_index);
+int case_percentage(char *buffer, int *buffer_index);
 
 #endif

@@ -7,10 +7,10 @@
  * Return: amount characters printed (1)
  */
 
-int case_percentage(*buffer, *buffer_index)
+int case_percentage(char *buffer, int *buffer_index)
 {
-	if (buffer_index >= BUFFER_SIZE)
-		flush_reset_buffer(buffer, &buffer_index);
+	if (*buffer_index >= BUFFER_SIZE)
+		flush_reset_buffer(buffer, buffer_index);
 	
 	buffer[(*buffer_index)++] = '%';
 
