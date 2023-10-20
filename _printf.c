@@ -31,12 +31,7 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 				counter += case_s(va_arg(list, char *), buffer, &buffer_index);
 			else if (*format == '%')
-			{
-				if (buffer_index >= BUFFER_SIZE)
-					flush_reset_buffer(buffer, &buffer_index);
-				buffer[buffer_index++] = '%';
-				counter++;
-			}
+				counter += case_percentage(buffer, &buffer_index);
 			else if (*format == 'd' || *format == 'i')
 				counter += _printnumbers(va_arg(list, int), buffer, &buffer_index);
 			else if (*format == 'b')
