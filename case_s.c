@@ -15,7 +15,7 @@ int case_s(char *s, char *buffer, int *buffer_index)
 	int i;
 
 	if (s == NULL)
-		return (0);
+		s = "(null)";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
