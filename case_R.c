@@ -21,7 +21,7 @@ int case_R(char *s, char *buffer, int *buffer_index)
 	len = 0;
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		check =0;
+		check = 0;
 		for (j = 0; j < 52; j++)
 		{
 			if (s[i] == str1[j])
