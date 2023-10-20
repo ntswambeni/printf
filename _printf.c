@@ -37,9 +37,9 @@ int _printf(const char *format, ...)
 			else if (*format == 'b')
 				counter += case_b(va_arg(list, unsigned int), buffer, &buffer_index);
 			else if (*format == 'p')
-                                counter += case_s(va_arg(list, void *), buffer, &buffer_index);
+				counter += case_s(va_arg(list, void *), buffer, &buffer_index);
 			else if (*format == 'r')
-                                counter += case_r(va_arg(list, char *), buffer, &buffer_index);
+				counter += case_r(va_arg(list, char *), buffer, &buffer_index);
 			else if (*format == 'R')
 				counter += case_R(va_arg(list, char *), buffer, &buffer_index);
 			else

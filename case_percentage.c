@@ -11,7 +11,7 @@ int case_percentage(char *buffer, int *buffer_index)
 {
 	if (*buffer_index >= BUFFER_SIZE)
 		flush_reset_buffer(buffer, buffer_index);
-	
+
 	buffer[(*buffer_index)++] = '%';
 
 	return (1);

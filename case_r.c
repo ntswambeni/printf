@@ -16,7 +16,8 @@ int case_r(char *s, char *buffer, int *buffer_index)
 		return (-1);
 
 	len = 0;
-	for (i = 0; s[i] != '\0'; i++);
+	for (i = 0; s[i] != '\0'; i++)
+		continue;
 	while (i >= 0)
 	{
 		if (*buffer_index >= BUFFER_SIZE)
