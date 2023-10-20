@@ -13,9 +13,9 @@ int _printf(const char *format, ...)
 	char buffer[BUFFER_SIZE];
 	int counter = 0, buffer_index = 0;
 
-	va_start(list, format);
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
+	va_start(list, format);
 	while (*format != '\0')
 	{
 		if (*format != '%')
