@@ -1,24 +1,35 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printnumbers - prints decimal numbers
- * @d: integer to print
+ * @num: integer to print
  * @buffer: the buffer string pointer
  * @buffer_index: the buffer_index pointer
  * Return: amount of digits printed
  */
-int _printnumbers(int d, char *buffer, int *buffer_index)
+int _printnumbers(int num, char *buffer, int *buffer_index)
 {
 	int numberlength;
+	unsigned int d;
 
-	if (d < 0)
+	if (num == 0)
 	{
-		_putchar('-');
-		_printdigit(-d, buffer, buffer_index);
-		numberlength = _countdigits(-d) + 1;
+		buffer[(*buffer_index)++] = '0';
+		numberlength = 1;
+		return (numberlength);
+	}
+
+	if (num < 0)
+	{
+		buffer[(*buffer_index)++] = '-';
+		d = -num;
+		_printdigit(d, buffer, buffer_index);
+		numberlength = _countdigits(d) + 1;
 	}
 	else
 	{
+		d = num;
 		_printdigit(d, buffer, buffer_index);
 		numberlength = _countdigits(d);
 	}
@@ -32,7 +43,7 @@ int _printnumbers(int d, char *buffer, int *buffer_index)
  * @buffer: the buffer string pointer
  * @buffer_index: the buffer_index pointer
  */
-void _printdigit(int num, char *buffer, int *buffer_index)
+void _printdigit(unsigned int num, char *buffer, int *buffer_index)
 {
 	int digit;
 	int remainder;
@@ -53,7 +64,7 @@ void _printdigit(int num, char *buffer, int *buffer_index)
  * @num: number to count digits
  * Return: amount of digits in a number
  */
-int _countdigits(int num)
+int _countdigits(unsigned int num)
 {
 	int remainder;
 
